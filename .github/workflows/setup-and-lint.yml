@@ -13,8 +13,18 @@ jobs:
       - name: Сборка приложения
         run: make setup
 
+      - name: Кеширование сборки
+        uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+
       - name: Исполнение автотестов
         run: make test
 
       - name: Проверка чистоты кода
         run: make lint
+
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
