@@ -1,0 +1,20 @@
+name: hello-world
+on: push
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Сборка приложения
+        uses: make setup
+
+      - name: Исполнение автотестов
+        uses: make test
+
+      - name: Проверка чистоты кода
+        uses: make lint

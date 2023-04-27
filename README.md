@@ -1,10 +1,11 @@
+![Setup and lint](https://github.com/cheernomore/hexlet-ci-app/actions/workflows/setup-and-lint.yml/badge.svg)]
 # Example app for CI Hexlet course
 
 Starting boilerplate of [Strapi](https://strapi.io/) application
 
 ## System requirements
 
-* NodeJS >= 18
+* NodeJS >= 18]]]
 * NPM >= 6.x
 * Make
 
